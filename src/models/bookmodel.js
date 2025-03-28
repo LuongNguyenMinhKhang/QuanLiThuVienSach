@@ -76,11 +76,6 @@ const Book = {
   },
 
   searchBooks: (keyword, callback) => {
-    if (typeof callback !== 'function') {
-      console.error("❌ Lỗi: callback không phải là một function!", callback);
-      return;
-    }
-
     const query = `SELECT * FROM books WHERE title LIKE ?`;
     const searchPattern = `%${keyword}%`;
 

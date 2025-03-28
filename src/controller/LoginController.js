@@ -2,7 +2,10 @@ const User = require('../models/usermodel.js');
 
 class LoginController {
     Login(req, res, next) {
-        if(req.session.loggedin) {
+        if(req.session.loggedin && req.session.isAdmin) {
+            res.redirect('/'); //Duy đức tự sửa nha
+        }
+        if(req.session.loggedin && !req.session.isAdmin) {
             res.redirect('/user');
         }
         res.render('login');
@@ -17,11 +20,23 @@ class LoginController {
             if (results.length > 0) {
                 req.session.loggedin = true;
                 req.session.username = username;
+                console.log(results[0].userRole);
+                if(results[0].userRole == 1) {
+                    req.session.isAdmin = true;
+                }
+                else {
+                    req.session.isAdmin = false;
+                }
                 res.redirect('/home');
             } else {
                 res.redirect('/login');
             }
         });
+    }
+
+    Logout(req, res, next) {
+        req.session.loggedin = false;
+        res.redirect('/home');
     }
 }
 
