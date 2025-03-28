@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .book-item {
+<<<<<<< HEAD
             width: 200px;
             /* Cố định chiều rộng */
             height: 280px;
@@ -60,10 +64,29 @@
     </style>
 </head>
 
+=======
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .truncate {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .img-book {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+>>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
 <body>
     <div class="container">
         <div class="row">
             {{#each books}}
+<<<<<<< HEAD
             <a href="/home/book/{{BookID}}" class="col-md-2 col-sm-4 col-6 my-2 btn mx-2">
                 <div class="card book-item">
                     <div class="card-body">
@@ -72,11 +95,25 @@
                     <div class="btn truncate">{{Title}}</div>
                 </div>
             </a>
+=======
+                <a href="/home/book/{{BookID}}" class="col-md-2 col-sm-4 col-6 my-2 btn mx-2">
+                    <div class="card book-item">
+                        <div class="card-body">
+                            <img class="img-book" src="{{ImageURL}}" loading="lazy" alt="Hình ảnh sách">
+                        </div>
+                        <div class="btn truncate">{{Title}}</div>
+                    </div>
+                </a>
+>>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
             {{/each}}
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+>>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
