@@ -2,7 +2,9 @@ const User = require('../models/usermodel.js');
 
 class LoginController {
     Login(req, res, next) {
-        //if(sessionStorage.getItem)
+        if(req.session.loggedin) {
+            res.redirect('/user');
+        }
         res.render('login');
     }
     CheckLogin(req, res, next) {
@@ -13,7 +15,8 @@ class LoginController {
                 return res.status(500).json({ error: 'Failed to load login', results });
             }
             if (results.length > 0) {
-                //sessionStorage.setItem('user', username);
+                req.session.loggedin = true;
+                req.session.username = username;
                 res.redirect('/home');
             } else {
                 res.redirect('/login');

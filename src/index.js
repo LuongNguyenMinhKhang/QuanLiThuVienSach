@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const session = require('express-session');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const { engine } = require('express-handlebars'); // Import the engine function from express-handlebars
@@ -12,7 +13,13 @@ app.use(bodyParser.json());
 
 // Use morgan for logging HTTP requests
 app.use(morgan('combined'));
-
+app.use(session({
+    secret: 'your-secret-key', // Replace with a secure secret
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Set true if HTTPS is enabled
+}));
+  
 // Configure the Handlebars engine
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
