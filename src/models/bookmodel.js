@@ -1,8 +1,4 @@
 const db = require('../config/database/dbconnect.js');
-<<<<<<< HEAD
-const { SearchBooks } = require('../controller/HomeController.js');
-=======
->>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
 
 const Book = {
   getAllBooks: (callback) => {
@@ -11,10 +7,6 @@ const Book = {
       if (err) {
         return callback(err, null);
       }
-<<<<<<< HEAD
-=======
-
->>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
       // Chuyển đổi imageURL từ Buffer sang Base64
       const formattedBooks = results.map(book => {
         if (book.ImageURL) {
@@ -81,7 +73,6 @@ const Book = {
       }
       callback(null, results);
     });
-<<<<<<< HEAD
   },
 
   searchBooks: (keyword, callback) => {
@@ -109,9 +100,5 @@ const Book = {
     });
   }
 }
-=======
-  }
-};
 
->>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
 module.exports = Book;

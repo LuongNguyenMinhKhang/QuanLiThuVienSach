@@ -6,7 +6,6 @@ const getBooks = (req, res) => {
       return res.status(500).json({ error: 'Failed to fetch books', results });
     }
     //res.status(200).json(results);
-<<<<<<< HEAD
     res.render('home', { books: results });
   });
 };
@@ -34,14 +33,6 @@ const SearchBooks = (req, res) => {
 
 const createBook = (req, res) => {
   const bookData = req.body;
-=======
-    res.render('home', { books : results});
-  });
-};
-
-const createBook = (req, res) => {
-  const bookData = req.body; 
->>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
   Book.createBook(bookData, (err, bookId) => {
     if (err) {
       return res.status(500).json({ error: 'Failed to create book' });
@@ -73,10 +64,7 @@ const deleteBook = (req, res) => {
 
 module.exports = {
   getBooks,
-<<<<<<< HEAD
   SearchBooks,
-=======
->>>>>>> 40bcc426c69195d0e67bbdb63def64dc681468ae
   createBook,
   updateBook,
   deleteBook
