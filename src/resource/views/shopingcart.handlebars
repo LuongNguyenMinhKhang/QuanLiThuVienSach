@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Tên sách</th>
+            <th>Giá tiền</th>
+            <th>Số lượng</th>
+            <th>Thời gian mượn</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each books}}
+        <tr>
+            <td><img src="{{image}}" alt="{{name}}" width="100"></td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{quantity}}</td>
+            <td>{{time}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

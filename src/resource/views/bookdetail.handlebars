@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .image {
+            height: 200px;
+            width: 200px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            width: 30%;
+        }
+        td {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chi tiết sách</h1>
+    <div class="container">
+        <img class="image" src="{{result.ImageURL}}" alt="Book Image" class="image">
+        <table>
+            <tr>
+                <th>Tên sách</th>
+                <td>{{result.Title}}</td>
+            </tr>
+            <tr>
+                <th>Tác giả</th>
+                <td>{{result.Author}}</td>
+            </tr>
+            <tr>
+                <th>Nhà xuất bản</th>
+                <td>{{result.Publisher}}</td>
+            </tr>
+            <tr>
+                <th>Giá</th>
+                <td>{{result.Price}} VNĐ</td>
+            </tr>
+            <tr>
+                <th>Số lượng</th>
+                <td>{{result.Quantity}}</td>
+            </tr>
+        </table>
+    </div>
+    <h3>Mô tả chi tiết</h3>
+    <p>{{result.description}}</p>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/shopingcart" class="my-2 py-2 btn btn-primary">Thêm vào giỏ hàng</a>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/home" class="my-2 py-2 btn btn-primary">Quay lại</a>
+    </div>
+</body>
+</html>
