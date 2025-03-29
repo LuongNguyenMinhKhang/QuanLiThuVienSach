@@ -4,9 +4,11 @@ class LoginController {
     Login(req, res, next) {
         if(req.session.loggedin && req.session.isAdmin) {
             res.redirect('/'); //Duy đức tự sửa nha
+            return;
         }
         if(req.session.loggedin && !req.session.isAdmin) {
             res.redirect('/user');
+            return;
         }
         res.render('login');
     }
