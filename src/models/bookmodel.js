@@ -1,5 +1,4 @@
 const db = require('../config/database/dbconnect.js');
-const { getBooks } = require('../controller/HomeController.js');
 
 const Book = {
   getAllBooks: (callback) => {

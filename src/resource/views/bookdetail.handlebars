@@ -63,7 +63,10 @@
     <h3>Mô tả chi tiết</h3>
     <p>{{result.description}}</p>
     <div style="text-align: center; margin-top: 20px;">
-        <a href="/shopingcart" class="my-2 py-2 btn btn-primary">Thêm vào giỏ hàng</a>
+        <form action="/shopingcart/add" method="post" style="display: inline;">
+            <input type="hidden" name="BookID" value="{{result.BookID}}">
+            <button type="submit" class="my-2 py-2 btn btn-primary">Thêm vào giỏ hàng</button>
+        </form>
     </div>
     <div style="text-align: center; margin-top: 20px;">
         <a href="/home" class="my-2 py-2 btn btn-primary">Quay lại</a>

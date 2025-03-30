@@ -76,29 +76,33 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Tên sách</th>
-                    <th>Giá tiền</th>
                     <th>Số lượng</th>
                     <th>Thời gian mượn</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                {{#each books}}
+                {{#each borrows}}
                 <tr>
-                    <td><img src="{{image}}" alt="{{name}}" width="100"></td>
-                    <td>{{name}}</td>
-                    <td>{{price}}₫</td>
-                    <td>{{quantity}}</td>
-                    <td>{{time}}</td>
+                    <td>{{BookName}}</td>
+                    <td>1</td>
+                    <td>1 tháng</td>
+                    <td>
+                        <form action="/shopingcart/delete" method="post" style="display: inline;">
+                            <input type="hidden" name="BookID" value="{{BookID}}">
+                            <button type="submit" class="btn btn-danger">Xóa</button>
+                        </form>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
 
         <div class="cart-summary">
-            <p><strong>Tổng cộng: {{totalAmount}}₫</strong></p>
-            <a href="/checkout" class="checkout-btn">Thanh toán</a>
+            <form action="/shopingcart/checkout" method="post">
+                <button type="submit" class="checkout-btn">Mượn</button>
+            </form>
         </div>
     </main>
 </body>

@@ -53,6 +53,7 @@ class UserController {
                 return res.status(500).json({ error: 'Failed to load login', results });
             }
             if (results.length > 0) {
+                req.session.userID = results[0].userID;
                 req.session.loggedin = true;
                 req.session.email = email;
                 console.log(results[0].userRole);
