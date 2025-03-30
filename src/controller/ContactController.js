@@ -23,10 +23,10 @@ class ContactController {
         });
 
         const mailOptions = {
-            from: `"${name}" <userlibrarynhom10@gmail.com>`,
-            to: "tongnhatnam1810@gmail.com",
+            from: `userlibrarynhom10@gmail.com`,
+            to: email,
             subject: `Liên hệ từ ${name}`,
-            text: `Người gửi: ${name}\nEmail: ${email}\n\nNội dung:\n${message}`,
+            text: `Chúng tôi đã nhận được phản hồi của bạn. Nội dung :${message}`,  
         };
 
         try {

@@ -1,4 +1,51 @@
 const Book = require('../models/bookmodel.js');
+const Category = require('../models/categorymodel.js');
+
+const getHomeData = (req, res) => {
+  // Lấy tất cả sách
+
+  const CategoryID = req.query.category;
+  console.log(CategoryID) // Lấy CategoryID từ query string
+  if(!CategoryID) {
+    Book.getAllBooks((err, books) => {
+      if (err) {
+        console.error('Error fetching books:', err);
+        return res.status(500).json({ error: 'Failed to fetch books' });
+      }
+  
+      // Lấy tất cả danh mục
+      Category.getAllCategories((err, categories) => {
+        if (err) {
+          console.error('Error fetching categories:', err);
+          return res.status(500).json({ error: 'Failed to fetch categories' });
+        }
+  
+        // Render giao diện với dữ liệu sách và danh mục
+        res.render('home', { books, categories });
+      });
+    });
+  }
+  else {
+    Book.getBooksByCategory(CategoryID, (err, books) => {
+      if (err) {
+        console.error('Error fetching books:', err);
+        return res.status(500).json({ error: 'Failed to fetch books' });
+      }
+  
+      // Lấy tất cả danh mục
+      Category.getAllCategories((err, categories) => {
+        if (err) {
+          console.error('Error fetching categories:', err);
+          return res.status(500).json({ error: 'Failed to fetch categories' });
+        }
+  
+        // Render giao diện với dữ liệu sách và danh mục
+        res.render('home', { books, categories });
+      });
+    });
+  }
+  
+};
 
 const getBooks = (req, res) => {
   Book.getAllBooks((err, results) => {
@@ -67,6 +114,7 @@ module.exports = {
   SearchBooks,
   createBook,
   updateBook,
-  deleteBook
+  deleteBook,
+  getHomeData
 };
 

@@ -6,7 +6,7 @@ const bookdetail = require('../controller/BookdetailController');
 
 router.get('/home/book/:id', bookdetail.getBookDetails);
 router.get('/home/result', books.SearchBooks);
-router.get('/home', books.getBooks);
-router.get('/', books.getBooks);
+router.get('/home', books.getHomeData);
+router.get('/', books.getHomeData);
 
 module.exports = router;
