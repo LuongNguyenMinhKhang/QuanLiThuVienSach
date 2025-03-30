@@ -1,0 +1,12 @@
+{
+  "port": 3000,
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "name": "book_store"
+  },
+  "recaptcha": {
+    "siteKey": "6LeI1wMrAAAAANclLs0c9QC7jETXHZYrPZtu6-CO",
+    "secretKey": "6LeI1wMrAAAAAGKSyASw5yrkdgNC5dMOEx2qEzEl"
+  }
+}

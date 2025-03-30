@@ -8,8 +8,8 @@ const registerRouter = require('./register.js');
 function route(app) {
     app.use('/shopingcart', shopingRouter);
     app.use('/login', loginRouter);
-    app.use('/register', registerRouter);
     app.use('/user', userRouter);
+    app.use('/register', registerRouter);
     app.use('/contact', contactRouter);
     app.use('/home', homeRouter);
     app.use('/', homeRouter);
