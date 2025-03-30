@@ -26,26 +26,22 @@
             /* Giữ nguyên kích thước hình ảnh */
             width: 130px;
             object-fit: cover;
+            margin: auto;
         }
 
         .truncate {
-            max-width: 90%;
+            max-width: 100%;
             max-height: 100px;
             /* Giới hạn chiều cao tiêu đề */
             overflow: hidden;
             text-overflow: ellipsis;
+            text-align: center;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             /* Hiển thị tối đa 2 dòng */
             -webkit-box-orient: vertical;
             font-size: 14px;
             /* Giảm kích thước chữ nếu cần */
-        }
-
-        .container .row {
-            justify-content: flex-start;
-            gap: 20px;
-            margin: auto;
         }
 
         .container:hover .book-item {
@@ -61,17 +57,17 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container-xxl">
+        <div class="row justify-content-center mt-4 gap-4">
             {{#each books}}
-            <a href="/home/book/{{BookID}}" class="col-md-2 col-sm-4 col-6 my-2 btn mx-2">
-                <div class="card book-item">
+                <div class="card p-2 book-item" style="width: 12rem">
+                    <a href="/home/book/{{BookID}}" style="text-decoration: none; color:black">
+                    <img src="{{ImageURL}}" class="card-img-top img-book">
                     <div class="card-body">
-                        <img class="img-book" src="{{ImageURL}}" loading="lazy" alt="Hình ảnh sách">
+                        <h5 class="card-title truncate">{{Title}}</h5>
                     </div>
-                    <div class="btn truncate">{{Title}}</div>
+                    </a>
                 </div>
-            </a>
             {{/each}}
         </div>
     </div>

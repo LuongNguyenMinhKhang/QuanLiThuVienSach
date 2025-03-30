@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
     <style>
         .login-container {
             background: linear-gradient(135deg, #929ed3, #b388de);
@@ -18,9 +18,9 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h3 class="text-center mb-4">Đăng Nhập</h3>
-        <form action="/auth" method="POST">
+    <div class="my-3">
+        <h3 class="text-center">Đăng Nhập</h3>
+        <form action="/login/checklogin" method="POST">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email của bạn" required>
@@ -29,9 +29,13 @@
                 <label for="password" class="form-label">Mật khẩu</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu" required>
             </div>
+            {{!-- <div class="g-recaptcha mb-3 my-3" data-sitekey="6LeI1wMrAAAAANclLs0c9QC7jETXHZYrPZtu6-CO" data-action="LOGIN"></div> --}}
             <button type="submit" class="btn btn-primary w-100">Đăng Nhập</button>
         </form>
-        <p class="text-center mt-3"><a style="color: red;" href="#">Quên mật khẩu?</a></p>
+        <p class="text-center mt-3">
+            <a style="color: red;" href="#">Quên mật khẩu?</a>
+        </p>
+        <a class="text-center btn btn-primary w-100" style="color: rgb(248, 248, 248); text-decoration: none;" href="/register">Tạo tài khoản mới</a>
     </div>
 </body>
 </html>
