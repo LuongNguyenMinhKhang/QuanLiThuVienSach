@@ -1,5 +1,5 @@
 <body>
-    <div class="container" style = "color: red;">
+    <div class="container">
         <h2>ĐỒ ÁN CHUYÊN NGÀNH - NHÓM 10</h2>
         <p><strong>Khoa Công Nghệ Thông Tin - Học Viện Hàng Không Việt Nam</strong></p>
             Đề tài: Xây Dựng Website Quản Lí Thư Viện Sách Sử Dụng Node.js
