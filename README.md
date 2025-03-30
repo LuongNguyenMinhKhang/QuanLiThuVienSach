@@ -1,6 +1,6 @@
-# ĐỒ ÁN CHUYÊN NGÀNH - NHÓM 10
+# ĐỒ ÁN CƠ SỞ NGÀNH - NHÓM 10
 
-**Khoa Công Nghệ Thông Tin - Học Viện Hàng Không Việt Nam**  
+**[Khoa Công Nghệ Thông Tin - Học Viện Hàng Không Việt Nam](https://fitvaa.edu.vn/)**  
 
 ## 📌 Đề tài: Xây Dựng Website Quản Lí Thư Viện Sách Sử Dụng Node.js
 
