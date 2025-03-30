@@ -1,5 +1,5 @@
 class ShopingcartController {
-    Shopingcart(req, res, next){
+    Shopingcart(req, res, next) {
         res.render('shopingcart');
     }
 }
