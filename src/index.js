@@ -8,8 +8,8 @@ const app = express();
 const port = 3000;
 const route = require('./routes');
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Use morgan for logging HTTP requests
 app.use(morgan('combined'));
@@ -19,6 +19,11 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: false } // Set true if HTTPS is enabled
 }));
+
+app.use((req, res, next) => {
+    console.log(`Request received: ${req.method} ${req.url}`);
+    next();
+});
   
 // Configure the Handlebars engine
 app.engine('handlebars', engine());

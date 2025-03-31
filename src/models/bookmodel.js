@@ -19,6 +19,24 @@ const Book = {
     });
   },
 
+  getBooksByCategory: (categoryID, callback) => {
+    const query = 'SELECT * FROM books WHERE CategoryID = ?';
+    db.query(query, [categoryID], (err, results) => {
+      if (err) {
+        return callback(err, null);
+      }
+      // Chuyển đổi imageURL từ Buffer sang Base64
+      const formattedBooks = results.map(book => {
+        if (book.ImageURL) {
+          book.ImageURL = `data:image/jpeg;base64,${Buffer.from(book.ImageURL).toString('base64')}`;
+        }
+        return book;
+      });
+
+      callback(null, formattedBooks);
+    });
+  },
+
   getBookDetails: (bookID, callback) => {
     const query = 'SELECT * FROM books WHERE bookID = ?';
     db.query(query, [bookID], (err, results) => {
