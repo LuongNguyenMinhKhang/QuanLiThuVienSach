@@ -6,7 +6,7 @@ const getHomeData = (req, res) => {
 
   const CategoryID = req.query.category;
   console.log(CategoryID) // Lấy CategoryID từ query string
-  if(!CategoryID) {
+  if(!CategoryID || CategoryID == 0) {
     Book.getAllBooks((err, books) => {
       if (err) {
         console.error('Error fetching books:', err);
