@@ -40,7 +40,7 @@ class UserController {
                         console.error('Error creating user:', err);
                         return res.status(500).json({ error: 'Failed to create user' });
                     }
-                    res.status(201).json({ message: 'User created successfully', results });
+                    res.redirect('/login');
                 });
             }
         }));
@@ -73,6 +73,7 @@ class UserController {
     //Logout
     Logout(req, res, next) {
         req.session.loggedin = false;
+        req.session.userID = null;
         res.redirect('/home');
     }
 }

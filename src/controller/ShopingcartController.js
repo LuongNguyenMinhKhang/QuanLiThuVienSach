@@ -69,7 +69,6 @@ const AddToCart = async (req, res) => {
 
         // 2. Kiểm tra phiên người dùng
         const userID = req.session.userID;
-        console.log('USERID : ', userID );
         if (!userID) {
             return res.redirect('/login'); // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
         }
